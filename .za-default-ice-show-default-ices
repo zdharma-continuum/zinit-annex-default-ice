@@ -10,13 +10,6 @@
 builtin emulate -LR zsh
 builtin setopt extendedglob warncreateglobal typesetsilent noshortloops
 
-integer retval
-typeset -g REPLY
-typeset -ga reply
-typeset -gA Reply
-
-integer ibdebug=$+ICE[debug]
-
 if [[ $Plugins[DEFAULT_ICE_default-ices] == [[:space:]]# ]] {
     (( ${#quiet} )) || +zinit-message "{pre}default-ice:{rst}{msg} No ices currently set.{rst}"
     return 1
@@ -29,6 +22,7 @@ local k v
 for k v ( "${(kv)ice[@]}" ) {
     +zinit-message "{b}{ice}$k{ehi}:{rst}{tab}{data}$v{rst}"
 }
+
 return 0
 
 
