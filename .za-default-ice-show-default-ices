@@ -5,29 +5,33 @@
 # License: MIT
 
 .za-default-ice-show-default-ices() {
-    # Set the base and typically useful options.
-    builtin emulate -LR zsh
-    builtin setopt extendedglob warncreateglobal typesetsilent noshortloops
 
-    integer retval
-    typeset -g REPLY
-    typeset -ga reply
-    typeset -gA Reply
+# Set the base and typically useful options.
+builtin emulate -LR zsh
+builtin setopt extendedglob warncreateglobal typesetsilent noshortloops
 
-    integer ibdebug=$+ICE[debug]
+integer retval
+typeset -g REPLY
+typeset -ga reply
+typeset -gA Reply
 
-    if [[ $Plugins[DEFAULT_ICE_default-ices] == [[:space:]]# ]] {
-        (( ${#quiet} )) || +zinit-message "{pre}default-ice:{rst}{msg} No ices currently set.{rst}"
-        return 1
-    }
+integer ibdebug=$+ICE[debug]
 
-    local -A ice
-    ice=( "${(@Q)${(@z)Plugins[DEFAULT_ICE_default-ices]}}" )
+if [[ $Plugins[DEFAULT_ICE_default-ices] == [[:space:]]# ]] {
+    (( ${#quiet} )) || +zinit-message "{pre}default-ice:{rst}{msg} No ices currently set.{rst}"
+    return 1
+}
 
-    local k v
-    for k v ( "${(kv)ice[@]}" ) {
-        +zinit-message "{b}{ice}$k{ehi}:{rst}{tab}{data}$v{rst}"
-    }
+local -A ice
+ice=( "${(@Q)${(@z)Plugins[DEFAULT_ICE_default-ices]}}" )
+
+local k v
+for k v ( "${(kv)ice[@]}" ) {
+    +zinit-message "{b}{ice}$k{ehi}:{rst}{tab}{data}$v{rst}"
+}
+return 0
+
+
 }
 
 # vim:ft=zsh:sw=4:sts=4:et:
