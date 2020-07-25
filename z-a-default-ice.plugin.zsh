@@ -15,7 +15,8 @@ Plugins[DEFAULT_ICE_DIR]="${0:h}"
 
 autoload -Uz ∧za-default-ice-preinit-handler \
     ∧za-default-ice-main-cmd-help-handler \
-    ∧za-default-ice-main-cmd
+    ∧za-default-ice-main-cmd \
+    .za-default-ice-show-default-ices
 
 # An empty stub to fill the help handler fields
 ∧za-default-ice-help-null-handler() { :; }
