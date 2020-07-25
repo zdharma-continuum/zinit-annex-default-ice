@@ -56,6 +56,12 @@
         return $?
     }
 
+    # --stats/-t
+    if (( ${#stats} )) {
+        .za-default-ice-stats
+        return $?
+    }
+
     local -A ZINIT_ICES
     .zinit-ice "$@"
     integer iceret=$?

@@ -21,9 +21,18 @@ if [[ $Plugins[DEFAULT_ICE_default-ices] == [[:space:]]# ]] {
     return 0
 }
 
+(( Plugins[DEFAULT_ICE_stats:existing-ices] += ${#ICE} ))
+
+local -A __defices
+__defices=( "${(@Q)${(@z)Plugins[DEFAULT_ICE_default-ices]}}" )
+
 # Apply the ices, whithout enforcing them — they can
 # be overriden by the object's own ices.
-ICE=( "${(@Q)${(@z)Plugins[DEFAULT_ICE_default-ices]}}" "${(kv)ICE[@]}" )
+ICE=( "${(kv)__defices[@]}" "${(kv)ICE[@]}" )
+
+(( Plugins[DEFAULT_ICE_stats:executions] ++ ))
+(( Plugins[DEFAULT_ICE_stats:applied-ices] += ${#__defices} ))
+(( Plugins[DEFAULT_ICE_stats:type-$__type] ++ ))
 
 return 0
 

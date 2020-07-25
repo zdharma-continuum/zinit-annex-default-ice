@@ -16,7 +16,8 @@ Plugins[DEFAULT_ICE_DIR]="${0:h}"
 autoload -Uz ∧za-default-ice-preinit-handler \
     ∧za-default-ice-main-cmd-help-handler \
     ∧za-default-ice-main-cmd \
-    .za-default-ice-show-default-ices
+    .za-default-ice-show-default-ices \
+    .za-default-ice-stats
 
 # An empty stub to fill the help handler fields
 ∧za-default-ice-help-null-handler() { :; }
@@ -32,5 +33,11 @@ autoload -Uz ∧za-default-ice-preinit-handler \
     subcommand:default-ice \
     ∧za-default-ice-main-cmd \
     ∧za-default-ice-main-cmd-help-handler
+
+(( Plugins[DEFAULT_ICE_stats:existing-ices] = 0 ))
+(( Plugins[DEFAULT_ICE_stats:executions] = 0 ))
+(( Plugins[DEFAULT_ICE_stats:applied-ices] = 0 ))
+(( Plugins[DEFAULT_ICE_stats:type-snippet] = 0 ))
+(( Plugins[DEFAULT_ICE_stats:type-plugin] = 0 ))
 
 # vim:ft=zsh:tw=80:sw=4:sts=4:et:foldmarker=[[[,]]]
