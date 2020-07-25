@@ -73,8 +73,9 @@
         return 1
     }
     Plugins[DEFAULT_ICE_default-ices]=${(j: :)${(@qkv)ZINIT_ICES}}
-    +zinit-message "{pre}default-ice:{rst}{msg} Stored the ices{ehi}:{rst}" \
-            "${(j: :)${(@q-kv)ZINIT_ICES}}.{rst}"
+    (( ${#quiet} )) || +zinit-message "{pre}default-ice:{rst}{msg} stored the ices{ehi}:{rst}" \
+                                "${(j: :)${(@q-kv)ZINIT_ICES}}.{rst}"
+    return 0
 }
 
 # vim:ft=zsh:sw=4:sts=4:et:
