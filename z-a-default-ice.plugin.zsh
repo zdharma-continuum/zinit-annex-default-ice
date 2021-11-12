@@ -23,13 +23,13 @@ autoload -Uz ∧za-default-ice-preinit-handler \
 ∧za-default-ice-help-null-handler() { :; }
 
 # The unscoping-support hook.
-@zinit-register-annex "z-a-default-ice" \
+@zinit-register-annex "zinit-annex-default-ice" \
     hook:preinit-3 \
     ∧za-default-ice-preinit-handler \
     ∧za-default-ice-help-null-handler
 
 # The subcommand `meta'.
-@zinit-register-annex "z-a-default-ice" \
+@zinit-register-annex "zinit-annex-default-ice" \
     subcommand:default-ice \
     ∧za-default-ice-main-cmd \
     ∧za-default-ice-main-cmd-help-handler
