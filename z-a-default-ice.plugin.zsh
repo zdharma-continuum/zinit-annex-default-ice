@@ -20,13 +20,13 @@ autoload -Uz za-default-ice-preinit-handler \
     .za-default-ice-stats
 
 # An empty stub to fill the help handler fields
-∧za-default-ice-help-null-handler() { :; }
+za-default-ice-help-null-handler() { :; }
 
 # The unscoping-support hook.
 @zinit-register-annex "zinit-annex-default-ice" \
     hook:preinit-3 \
     za-default-ice-preinit-handler \
-    ∧za-default-ice-help-null-handler
+    za-default-ice-help-null-handler
 
 # The subcommand `meta'.
 @zinit-register-annex "zinit-annex-default-ice" \
