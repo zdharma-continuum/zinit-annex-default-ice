@@ -4,7 +4,7 @@
 # Copyright (c) 2020 Sebastian Gniazdowski
 # License: MIT
 
-∧za-default-ice-main-cmd() {
+za-default-ice-main-cmd() {
     # Set the base and typically useful options.
     builtin emulate -LR zsh
     builtin setopt extendedglob warncreateglobal typesetsilent noshortloops
@@ -46,7 +46,7 @@
 
     # --help/-h
     if (( ${#help} )) {
-        ∧za-default-ice-main-cmd-help-handler
+        za-default-ice-main-cmd-help-handler
         return retval
     }
 
