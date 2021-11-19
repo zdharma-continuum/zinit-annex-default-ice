@@ -4,7 +4,7 @@
 # Copyright (c) 2019-2020 Sebastian Gniazdowski
 # License MIT
 
-∧za-default-ice-preinit-handler() {
+za-default-ice-preinit-handler() {
 
 builtin emulate -LR zsh
 builtin setopt extendedglob warncreateglobal typesetsilent noshortloops
