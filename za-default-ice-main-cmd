@@ -63,7 +63,7 @@ za-default-ice-main-cmd() {
     }
 
     local -A ZINIT_ICES
-    .zinit-ice "$@"
+    _zi::-ice "$@"
     integer iceret=$?
 
     shift iceret
