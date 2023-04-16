@@ -1,8 +1,7 @@
 # zinit-annex-default-ice
 
-A [Zinit](https://github.com/zdharma-continuum/zinit) annex (i.e.: an extension
-module) that allows to set **default ices** for the next `zinit` commands. It
-adds a new subcommand: **default-ice** which has the following synopsis:
+A [Zinit](https://github.com/zdharma-continuum/zinit) annex (i.e.: an extension module) that allows to set **default
+ices** for the next `zinit` commands. It adds a new subcommand: **default-ice** which has the following synopsis:
 
 ```
 —— default-ice --help/-h --clear/-c --show/-s --get/-g --quiet/-q --stats/-t 
